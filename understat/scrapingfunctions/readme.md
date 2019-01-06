@@ -24,3 +24,36 @@ get_matches("RUS", type = "fixtures")
 ```
 ![](https://github.com/TimHoare/football/blob/master/understat/scrapingfunctions/images/get_matches_example1.png)
 ![](https://github.com/TimHoare/football/blob/master/understat/scrapingfunctions/images/get_matches_example2.png)
+
+```get_match_xG``` takes a match url or match id and returns the shot data for that match as a dataframe.
+
+```r
+get_match_xG(10047) # Match id for Barcelona vs Real Madrid, 28/10/2018
+```
+![](https://github.com/TimHoare/football/blob/master/understat/scrapingfunctions/images/get_match_xG_example.png)
+
+```get_player_data``` takes a player url or id and returns all available shot data as a dataframe
+
+```r
+get_player_data("https://understat.com/player/2371") # Player url for Cristiano Ronaldo
+```
+![](https://github.com/TimHoare/football/blob/master/understat/scrapingfunctions/images/get_player_data_example.png)
+
+```get_team_data``` takes a team's url for a single season and returns all player data for that team as a data frame
+
+```r
+get_team_data("https://understat.com/team/Paris_Saint_Germain/2018")
+```
+![](https://github.com/TimHoare/football/blob/master/understat/scrapingfunctions/images/get_team_data_example.png)
+
+
+
+
+
+
+
+
+
+
+
+
