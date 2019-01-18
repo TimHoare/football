@@ -95,11 +95,18 @@ managers_2018_words %>%
   filter(!is.na(word), !word %in% c("â")) %>%
   anti_join(stop_words) %>%
   count(word, sort = TRUE) %>%
-  print(n = 20)
+  head(15) %>%
+  mutate(word = fct_reorder(word, n)) %>%
+  ggplot(aes(word, n)) +
+  geom_col(colour = "black", fill = "blue") +
+  coord_flip() +
+  labs(x = NULL,
+       y = "Number of occurrences of word")
 ```
 ![](https://github.com/TimHoare/football/blob/master/manager_departures/images/most_common_words.png)
 
-  
+Here, uniteresting words such as the, and, of, have been filtered out using the built in `stop_words` dataset from `tidytext`
+Also "â" has been filtered out as this how double quotation marks have been represented. 
 
 
 
