@@ -58,6 +58,7 @@ and 5 games in charge.
 library(tidytext)
 
 managers_2018_words <- managers_2018 %>%
+  mutate(id = row_number()) %>%
   unnest_tokens(word, value)
   
 managers_2018_words
