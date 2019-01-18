@@ -54,6 +54,9 @@ and 5 games in charge.
 
 ### Text Analysis
 
+For the text analysis I will mainly be using the [tidytext](https://cran.r-project.org/web/packages/tidytext/index.html) package,
+which employs the tidy data principles (in this case one row per word).
+
 ```r
 library(tidytext)
 
@@ -63,7 +66,46 @@ managers_2018_words <- managers_2018 %>%
   
 managers_2018_words
   ```
-![](https://github.com/TimHoare/football/blob/master/manager_departures/images/managers_2018_words.png)  
+![](https://github.com/TimHoare/football/blob/master/manager_departures/images/managers_2018_words.png)
+
+#### What were some of the longest and shortest statements from clubs regarding a manager departure?
+
+```r
+managers_2018_words %>%
+  count(name, club, id, sort = TRUE)
+  ```
+  ![](https://github.com/TimHoare/football/blob/master/manager_departures/images/longest_statements.png)
+  
+The longest statement by quite some distance is [Swansea City's](https://www.swanseacity.com/news/swansea-city-part-company-paul-clement) following the departure of Paul Clement in December 2017.
+
+```r
+managers_2018_words %>%
+  filter(!is.na(word)) %>%
+  count(name, club, id) %>%
+  arrange(n)
+  ```  
+![](https://github.com/TimHoare/football/blob/master/manager_departures/images/shortest_statement.png)
+
+The shortest statements here are usually a sentence or two, announcing the manager has left and thanking him for his efforts.
+
+#### What are some of the most common words used?
+
+```r
+managers_2018_words %>%
+  filter(!is.na(word), !word %in% c("â")) %>%
+  anti_join(stop_words) %>%
+  count(word, sort = TRUE) %>%
+  print(n = 20)
+```
+![](https://github.com/TimHoare/football/blob/master/manager_departures/images/most_common_words.png)
+
+  
+
+
+
+  
+
+  
   
 
 
