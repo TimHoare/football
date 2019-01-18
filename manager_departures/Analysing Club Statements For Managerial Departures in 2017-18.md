@@ -105,10 +105,64 @@ managers_2018_words %>%
 ```
 ![](https://github.com/TimHoare/football/blob/master/manager_departures/images/most_common_words.png)
 
-Here, uniteresting words such as the, and, of, have been filtered out using the built in `stop_words` dataset from `tidytext`
+Here, uninteresting words such as the, and, of, have been filtered out using the built in `stop_words` dataset from `tidytext`
 Also "â" has been filtered out as this how double quotation marks have been represented. 
 
+There are some more fairly uninteresting words at the top here: club, manager, team and football are all pretty obvious. "Paul"
+is strange one, but we see that a Paul was sacked/departed 6 times last season (Tisdale, Heckingbottom (twice), Hurst, Lambert
+and Clement)
 
+### Sentiment Analysis
+
+Sentiment analysis considers the the emotion or intention of a text to get an overall idea of how positive or negative it is.
+`tidytext` has three build in sentiment lexicons, and in this case I will be using the `afinn` lexicon which assigns a score 
+to each word based on how positive or negative it is, e.g. "anger" has a score of -3, while "wowww" has a score of 4.
+
+I'm not going to spend long on this because there are a variety of issues with this approach, for example: 
+* In most cases there is not nearly enough text to get an accurate representation of the sentiment. 
+* Words can be interpreted in many different ways and the lexicon may not always get it right.
+* Any sort of negation cannot be taken into account here as we are going on a per-word basis.
+
+#### Which statements show the most negative sentiment
+
+```r
+managers_2018_words %>%
+  inner_join(get_sentiments("afinn")) %>%
+  group_by(name, club, id) %>%
+  summarise(sentiment = sum(score)) %>%
+  arrange(sentiment)
+  ```
+![](https://github.com/TimHoare/football/blob/master/manager_departures/images/negative_sentiment.png)
+
+We see that Gary Caldwell's departure from Chesterfield is the only statement with a negative sentiment score. We can also 
+look at the induvidual words and how they were assigned:
+
+```r
+managers_2018_words %>%
+  inner_join(get_sentiments("afinn")) %>%
+  filter(id == 64)
+  ```
+![](https://github.com/TimHoare/football/blob/master/manager_departures/images/gary_caldwell.png)  
+
+Only five words (out of 110) have been assined a sentiment score, and the word "hard" for example has been assigned a negative 
+score, when it has been used in a positive context: "Gary has worked very hard during his time at the club".
+
+#### Which statements show the most positive sentiment
+
+We can also look at the most positive statements using similar code:
+
+```r
+managers_2018_words %>%
+  inner_join(get_sentiments("afinn")) %>%
+  group_by(name, club, id) %>%
+  summarise(sentiment = sum(score)) %>%
+  arrange(desc(sentiment))
+  ```
+  ![](https://github.com/TimHoare/football/blob/master/manager_departures/images/positive_sentiment.png) 
+  
+  Top of the list is the longest statement, regarding Paul Clement's departure from Swansea City, as the club give him plenty of credit
+  for his work in the previous season.
+  
 
   
 
