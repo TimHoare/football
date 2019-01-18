@@ -1,6 +1,6 @@
 # Analysing Club Statements For Managerial Departures in 2017-18
 
-The idea for this analysis is shamelessly stolen from an piece by [BBC Sport](https://www.bbc.co.uk/sport/football/46875479)
+The idea for this analysis is shamelessly stolen from a piece by [BBC Sport](https://www.bbc.co.uk/sport/football/46875479)
 
 ### Getting the data 
 
