@@ -163,17 +163,54 @@ managers_2018_words %>%
   Top of the list is the longest statement, regarding Paul Clement's departure from Swansea City, as the club give him plenty of credit
   for his work in the previous season.
   
-
-  
-
+  ### Relationships between words
   
   
+  The `tidytext` package also has the capability to look at ngrams, which tokenises adjacent words. Looking at bigrams:
+  
+  ```r
+  manager_bigrams <- managers_2018 %>%
+  unnest_tokens(bigram, value, token = "ngrams", n = 2)
 
 
+manager_bigrams %>%
+  separate(bigram, c("word1", "word2"), sep = " ") %>%
+  filter(!word1 %in% stop_words$word,
+         !word2 %in% stop_words$word,
+         !is.na(word1), !is.na(word2),
+         !word1 %in% c("â", "œi"),
+         !word2 %in% c("â", "œi")) %>%
+  count(word1, word2, sort = TRUE)
+  ```
+  ![](https://github.com/TimHoare/football/blob/master/manager_departures/images/bigrams.png) 
+  
+  We can visualise these relationships using the `ggraph` and `igraph` packages:
+  
+  ```r
+  library(igraph)
+  library(ggraph)
+  
+  ngram_graph <- manager_bigrams %>%
+  separate(bigram, c("word1", "word2"), sep = " ") %>%
+  filter(!word1 %in% stop_words$word,
+         !word2 %in% stop_words$word,
+         !is.na(word1), !is.na(word2),
+         !word1 %in% c("â", "œi"),
+         !word2 %in% c("â", "œi")) %>%
+  count(word1, word2, sort = TRUE) %>%
+  filter(n >= 5) %>%
+  graph_from_data_frame()
 
 
+set.seed(2019)
 
-
-
-
-
+ggraph(ngram_graph, layout = "fr") +
+  geom_edge_link() +
+  geom_node_point(colour = "firebrick1", size = 5, alpha = 0.75) +
+  geom_node_text(aes(label = name), vjust = 1, hjust = 1) +
+  theme_void()
+  ```
+![](https://github.com/TimHoare/football/blob/master/manager_departures/images/bigram_graph.png)
+  
+Again, we don't have a lot of information here to make a good graph, as we mostly get club names, but we do see "mutual consent"
+which is often used in statements, and a larger network centred around team affairs, management etc.
