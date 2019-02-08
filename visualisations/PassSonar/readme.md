@@ -2,10 +2,9 @@
 
 This post is based on and modified from Eliot McKinley's [tutorial](https://github.com/etmckinley/PassSonar/blob/master/StatsBomb%20PassSonars.R) using StatsBomb's [free data](https://github.com/statsbomb/open-data).
 
-# Data Wrangling
+## Data Wrangling
 
-I'm starting with the match data in a .json file, and as an example I'll be using Barcelona's match against Real Madrid
-in the Copa Del Rey on 06/02/19.
+As an example I'll be using Barcelona's match against Real Madrid in the Copa Del Rey on 06/02/19. I'm starting with the match data in a .json file.
 
 ```r
 json <- readChar("{your file name}.json",
