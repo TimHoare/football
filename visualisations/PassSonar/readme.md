@@ -2,25 +2,10 @@
 
 This post is based on and modified from Eliot McKinley's [tutorial](https://github.com/etmckinley/PassSonar/blob/master/StatsBomb%20PassSonars.R) using StatsBomb's [free data](https://github.com/statsbomb/open-data).
 
-## Getting the data 
+# Data Wrangling
 
-WhoScored provide an interactive match centre for a large number of football matches, giving the public the ability to look at
-heatmaps, shot locations, touch maps etc.
-
-![](https://github.com/TimHoare/football/blob/master/visualisations/PassSonar/images/whoscored_match_centre.png)
-
-If we look at the page source, we can see that the raw match event information is stored as JSON in a a JavaScript variable 
-called 'matchCentreData'.
-
-The events themselves are in an array named 'events' (shock) and with some scraping or copy and pasting, we can format this nicely
-in a text editor to get a feel for the data:
-
-![](https://github.com/TimHoare/football/blob/master/visualisations/PassSonar/images/whoscored_json.png)
-
-I've now saved everthing in that variable (i.e. before var matchCentreEventTypeJson and the semicolon before it) to file so I can
-import it into R. 
-
-The first step is to read the file in as a string:
+I'm starting with the match data in a .json file, and as an example I'll be using Barcelona's match against Real Madrid
+in the Copa Del Rey on 06/02/19.
 
 ```r
 json <- readChar("{your file name}.json",
