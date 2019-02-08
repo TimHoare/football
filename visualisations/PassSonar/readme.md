@@ -163,7 +163,7 @@ need to be put into separate variables
 
 ```r
   ids <- clean_events %>%
-  filter(team_id == 65, type_display_name == "FormationSet") %>% # I've chosen Barcelona here
+  filter(team_id == 65, type_display_name == "FormationSet") %>% # I've chosen Barcalona here
   pull(involved_players) %>% # This gets the player ids in the order we need them in
   strsplit(split = ",") %>%
   unlist()
@@ -301,12 +301,12 @@ whoscored_pitch(theme = "dark") +
   annotation_custom(grob = colourbar, xmin = 3, xmax = 7, ymin = 5, ymax = 20) +
   annotate("text", label='Bar length = mean pass distance', x = -2, y = 60, size = 4,
            colour = "white") +
-  annotate("text", label = "Barcelona PassSonar vs Real Madrid, 6th Feb 2019", x = 110, y = 34,
+  annotate("text", label = "PassSonar: Barcelona vs Real Madrid, 6th Feb 2019", x = 110, y = 34,
            colour = "white", size = 8, fontface = "bold")
 ```
 Here's the final plot:
 
-![](https://github.com/TimHoare/football/blob/master/visualisations/PassSonar/images/barca_sonar.png)
+![](https://github.com/TimHoare/football/blob/master/visualisations/PassSonar/images/final_plot.png)
 
 
 
