@@ -93,9 +93,9 @@ We also need to add some player names, which we can do by making a players table
 ```r
 home <- list[["home"]][["players"]] %>%
   tbl_df() %>%
-  select(-contains("stats")) %>%
-  janitor::clean_names() # Remove the 800 or so "stats" columns created by calling "flatten = TRUE"
+  select(-contains("stats")) %>% # Remove the 800 or so "stats" columns created by calling "flatten = TRUE"
   # in fromJSON earlier
+  janitor::clean_names() 
 
 # Repeat the process for the away team
 away <- list[["away"]][["players"]] %>%
