@@ -41,8 +41,8 @@ We can now extract individual elements from the list, for example the events arr
 library(tidyverse)
 
 events <- list[["events"]] %>%
-  janitor::clean_names() %>%
-  tbl_df() # I prefer snake case
+  janitor::clean_names() %>%  # I prefer snake case
+  tbl_df()
 ```
 Next we need to clean up the `qualifiers` column, which is a list of dataframes. This is a pain to do, but I have written a function 
 for this, which I won't dwell on for too long:
