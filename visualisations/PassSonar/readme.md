@@ -1,6 +1,6 @@
 # Creating a PassSonar plot in R using data from WhoScored
 
-This post is based on and modified from Eliot McKinley's [tutorial](https://github.com/etmckinley/PassSonar/blob/master/StatsBomb%20PassSonars.R) using StatsBomb's [free data](https://github.com/statsbomb/open-data)
+This post is based on and modified from Eliot McKinley's [tutorial](https://github.com/etmckinley/PassSonar/blob/master/StatsBomb%20PassSonars.R) using StatsBomb's [free data](https://github.com/statsbomb/open-data).
 
 ## Getting the data 
 
