@@ -12813,6 +12813,9 @@ date,season,match,scorer,team,field,time,type
 2004-03-27,2003/04,/matches/everton-v-middlesbrough-27-march-2004-19522/,Joseph Yobo,Middlesbrough,away,83,Own Goal
 2004-03-27,2003/04,/matches/manchester-city-v-fulham-27-march-2004-19523/,NA,NA,NA,NA,NA
 2004-03-27,2003/04,/matches/southampton-v-tottenham-hotspur-27-march-2004-19524/,Rory Delap,Southampton,home,64,Goal
+2004-03-28,2003/04,/matches/arsenal-v-manchester-united-28-march-2004-19563/,Thierry Henry,Arsenal,home,50,Goal
+2004-03-28,2003/04,/matches/arsenal-v-manchester-united-28-march-2004-19563/,Louis Saha,Manchester United,away,86,Goal
+2004-03-28,2003/04,/matches/bolton-wanderers-v-newcastle-united-28-march-2004-19561/,Henrik Pedersen,Bolton Wanderers,home,4,Goal
 2004-03-28,2003/04,/matches/leicester-city-v-liverpool-28-march-2004-19562/,NA,NA,NA,NA,NA
 2004-04-03,2003/04,/matches/fulham-v-birmingham-city-03-april-2004-19582/,NA,NA,NA,NA,NA
 2004-04-03,2003/04,/matches/middlesbrough-v-bolton-wanderers-03-april-2004-19583/,Kevin Nolan,Middlesbrough,home,8,Own Goal
@@ -23658,6 +23661,7 @@ date,season,match,scorer,team,field,time,type
 2014-10-18,2014/15,/matches/manchester-city-v-tottenham-hotspur-18-october-2014-310549/,Sergio Agüero,Manchester City,home,20,Penalty
 2014-10-18,2014/15,/matches/manchester-city-v-tottenham-hotspur-18-october-2014-310549/,Sergio Agüero,Manchester City,home,68,Penalty
 2014-10-18,2014/15,/matches/manchester-city-v-tottenham-hotspur-18-october-2014-310549/,Sergio Agüero,Manchester City,home,75,Goal
+2014-10-18,2014/15,/matches/newcastle-united-v-leicester-city-18-october-2014-312879/,Gabriel Obertan,Newcastle United,home,71,Goal
 2014-10-18,2014/15,/matches/southampton-v-sunderland-18-october-2014-310555/,Santiago Vergini,Southampton,home,12,Own Goal
 2014-10-18,2014/15,/matches/southampton-v-sunderland-18-october-2014-310555/,Graziano Pelle,Southampton,home,18,Goal
 2014-10-18,2014/15,/matches/southampton-v-sunderland-18-october-2014-310555/,Jack Cork,Southampton,home,37,Goal
@@ -23945,7 +23949,6 @@ date,season,match,scorer,team,field,time,type
 2014-12-29,2014/15,/matches/liverpool-v-swansea-city-29-december-2014-310661/,Gylfi Sigurdsson,Swansea City,away,52,Goal
 2014-12-29,2014/15,/matches/liverpool-v-swansea-city-29-december-2014-310661/,Adam Lallana,Liverpool,home,61,Goal
 2014-12-29,2014/15,/matches/liverpool-v-swansea-city-29-december-2014-310661/,Jonjo Shelvey,Liverpool,home,69,Own Goal
-2014-10-18,2014/15,/matches/newcastle-united-v-leicester-city-18-october-2014-312879/,Gabriel Obertan,Newcastle United,home,71,Goal
 2015-01-01,2014/15,/matches/aston-villa-v-crystal-palace-01-january-2015-310669/,NA,NA,NA,NA,NA
 2015-01-01,2014/15,/matches/hull-city-v-everton-01-january-2015-310670/,Ahmed Elmohamady,Hull City,home,33,Goal
 2015-01-01,2014/15,/matches/hull-city-v-everton-01-january-2015-310670/,Nikica Jelavic,Hull City,home,43,Goal
@@ -28733,6 +28736,3 @@ date,season,match,scorer,team,field,time,type
 2019-05-12,2018/19,/matches/watford-v-west-ham-united-12-may-2019-362390/,Gerard Deulofeu,Watford,home,46,Goal
 2019-05-12,2018/19,/matches/watford-v-west-ham-united-12-may-2019-362390/,Marko Arnautović,West Ham United,away,71,Goal
 2019-05-12,2018/19,/matches/watford-v-west-ham-united-12-may-2019-362390/,Mark Noble,West Ham United,away,78,Penalty
-2004-03-28,2003/04,/matches/arsenal-v-manchester-united-28-march-2004-19563/,Thierry Henry,Arsenal,home,50,Goal
-2004-03-28,2003/04,/matches/arsenal-v-manchester-united-28-march-2004-19563/,Louis Saha,Manchester United,away,86,Goal
-2004-03-28,2003/04,/matches/bolton-wanderers-v-newcastle-united-28-march-2004-19561/,Henrik Pedersen,Bolton Wanderers,home,4,Goal
